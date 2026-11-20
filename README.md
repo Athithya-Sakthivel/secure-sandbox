@@ -3,7 +3,7 @@
 A hardened, isolated development environment designed for technical take-home assignments. Inspired by recent high-profile supply chain attacks (such as the 2026 Binance DevOps compromise), this sandbox minimizes the attack surface by enforcing strict container security policies, resource limits, and privilege restrictions.
 
 > **⚠️ IMPORTANT: Do Not Use GitHub Codespaces**  
-> GitHub Codespaces automatically injects platform-level secrets (e.g., `GITHUB_TOKEN`) and often ignores restrictive Docker `runArgs` (such as `--security-opt=no-new-privileges`). For maximum security and accurate validation, this sandbox **must be run locally** using Docker Desktop.
+> GitHub Codespaces automatically injects platform-level secrets (e.g., `GITHUB_TOKEN`) and often ignores restrictive Docker `runArgs` (such as `--security-opt=no-new-privileges`). For maximum security and accurate validation, this sandbox **must be run locally** using Docker.
 
 ## Why Use This?
 
