@@ -1,27 +1,43 @@
 {
   "name": "Secure Sandbox",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04@sha256:d94c97dd9cacf183d0a6fd12a8e87b526e9e928307674ae9c94139139c0c6eae",
-
+  
   "containerUser": "vscode",
   "remoteUser": "vscode",
   "updateRemoteUserUID": true,
-
-  "userEnvProbe": "none",
-
+  
   "runArgs": [
     "--security-opt=no-new-privileges",
     "--pids-limit=512",
     "--memory=4g",
     "--cpus=2"
   ],
-
+  
   "containerEnv": { "GITHUB_TOKEN": "", "GH_TOKEN": "" },
   "remoteEnv":   { "GITHUB_TOKEN": "", "GH_TOKEN": "" },
+  
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "installTools": false
+    },
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "22",
+      "nodeGypDependencies": false
+    }
+  },
 
   "customizations": {
     "vscode": {
-      "settings": { "terminal.integrated.enablePersistentSessions": false },
-      "extensions": []
+      "settings": { 
+        "terminal.integrated.enablePersistentSessions": false,
+        "python.defaultInterpreterPath": "/usr/local/python/current/bin/python3"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint"
+      ]
     }
   }
 }
